@@ -99,7 +99,17 @@ String literal count: 362938
 ```
 The above times (989ms to lex, 675ms to parse) are on the 2.6 GHz i7-6600U in my laptop.
 
-If you benchmark against the above you can double check that you see exactly 18,513,174 tokens in `source_1M.txt`, and see the above numbers of constructs after you parse.
+As a sanity check that your program is correct, ensure that you see exactly 18,513,174 tokens in `source_1M.txt`, and see the above numbers of constructs after you parse.
+For these purposes one lexing "token" consists of one of:
+* The keyword `fun`
+* The keyword `let`
+* The token `:=`
+* The token `=>`
+* The token `(`
+* The token `)`
+* The token `;`
+* A string literal (the entire thing counts as one token)
+* An identifier
 
 Edge Cases
 ----------
