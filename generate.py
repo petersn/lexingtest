@@ -36,7 +36,7 @@ def generate_name():
 def generate_string_literal():
     # Make sure the competitor doesn't mess up on keywords in strings.
     if random_float() < 0.001:
-		# For Python2 + Python3 exact equality we have to sort here.
+        # For Python2 + Python3 exact equality we have to sort here.
         return choice(['"%s"' % kw for kw in sorted(keywords)])
     choices = list(string.ascii_lowercase + string.punctuation + " ")
     choices.remove('"')
