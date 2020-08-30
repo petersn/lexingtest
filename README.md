@@ -41,7 +41,7 @@ let example7 := "Still \" in the \\ string\n";
 // ... and that's it.
 ```
 
-In the ASCII version an identifier may begin with `[a-zA-Z_]` and may continue with any of `[a-zA-Z0-9_]`, except it may not be either of the keywords `let` or `fun`.
+An identifier may begin with `[a-zA-Z_]` and may continue with any of `[a-zA-Z0-9_]`, except it may not be either of the keywords `let` or `fun`.
 There is no need to sanity check anything when parsing (e.g. no need to check that identifiers aren't redefined, or that things make any sense).
 Note that `//`, `/*`, and `*/` may appear inside of strings, but that block comments should *not* skip a `/*` or `*/` inside of what could be interpreted as a string.
 
