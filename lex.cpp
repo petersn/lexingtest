@@ -369,7 +369,7 @@ int main(int argc, char** argv) {
     struct stat st;
     fstat(fd, &st);
     size_t file_length = st.st_size;
-    std::cout << "Mapping " << file_length << " bytes\n";
+    std::cout << "Mapping " << file_length << " bytes\n\n";
     char* file_mapping = (char*) mmap(nullptr, file_length, PROT_READ, MAP_PRIVATE, fd, 0);
 
     Timer t1("Lexing");
@@ -387,6 +387,7 @@ int main(int argc, char** argv) {
     std::vector<Declaration> declarations = parse(tokens);
     t2.stop();
 
+    std::cout << "\n";
     std::cout << "Token count:          " << tokens.size() << "\n";
     std::cout << "Declaration count:    " << declarations.size() << "\n";
     std::cout << "Lambda count:         " << lambda_count << "\n";

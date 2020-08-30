@@ -78,6 +78,28 @@ They look like this:
 <img src="/static/screenshot.png"></img>
 </div>
 
+Benchmark
+---------
+
+The file `lex.cpp` contains a naive and slow reference implementation of lexing + parsing.
+Example usage:
+```
+$ g++ -Ofast lex.cpp -o lex
+$ ./lex files/source_1M.txt
+Mapping 91160602 bytes
+
+Lexing took: 0.989201s
+Parsing took: 0.675446s
+
+Token count:          18513174
+Declaration count:    1000000
+Lambda count:         2306033
+Application count:    2633271
+String literal count: 362938
+```
+The above times (989ms to lex, 675ms to parse) are on the 2.6 GHz i7-6600U in my laptop.
+
+If you benchmark against the above you can double check that you see exactly 18,513,174 tokens in `source_1M.txt`, and see the above numbers of constructs after you parse.
 
 Edge Cases
 ----------
