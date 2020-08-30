@@ -52,7 +52,7 @@ Simply run `python generate.py` to populate `files/` with the test files (either
 The generated files should be byte-for-byte identical every time, and should match the hashes below.
 
 ```
-$ time python3 generate.py
+$ time python generate.py
 Filling: files/source_1k.txt
 Filling: files/source_10k.txt
 Filling: files/source_100k.txt
@@ -70,6 +70,14 @@ e20e3b141c8bfdc3067219a9c3fa0ad9df9a0f5fa613b7ea40c28b86d0ebcfcf  files/source_1
 
 Each file contains ~60% source lines, ~15% blank lines, and ~25% comment lines, where the number of source lines is exactly equal to the number in the path.
 For example, `files/source_1M.txt` will contain exactly 1,000,000 source lines, 277,626 blank lines, and 458,004 lines of comments.
+
+For convenience, I've checked in just the smallest example file (`files/source_1k.txt`) so you can see what the outputs look like.
+They look like this:
+
+<div align="center">
+<img src="/static/screenshot.png"></img>
+</div>
+
 
 Edge Cases
 ----------
